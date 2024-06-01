@@ -88,12 +88,98 @@ def esNombreLargo(str):
 
 
 # esta es una función aux
-def esEntero(x):
-   if(x==int(x)):
+def esMultiploDe(x,y):
+   if(x/y==int(x/y)):
       return(True)
    else: return(False)
-print(esEntero(100/4))
+
 def esBisiesto (año):
-   if(esEntero(año/4)):
+   if(esMultiploDe(año,400) or ((esMultiploDe (año,4)) and (esMultiploDe(año,100)== False)) ):
       return(True)
-   else:return(False)
+   else: return(False)
+# print(esBisiesto(2020))
+
+# Ejc 4 composition
+def PesoPino (pinoLen: int):
+   if (pinoLen > 300):
+      excess_pinoLen = pinoLen - 300
+   else: excess_pinoLen = 0
+   weight = excess_pinoLen * 2 + pinoLen * 3
+   return(weight)
+
+# print(PesoPino(200))
+
+def es_peso_util(weight:int):
+   if ( weight >= 400 and weight <= 1000 ):
+    return(True)
+   else: 
+      return(False)
+
+# print(es_peso_util(562))
+
+def sirve_pino(height : int):
+   
+   if(es_peso_util(PesoPino(height))==True):
+      return (True)
+   else: return(False)
+
+# print (sirve_pino(300))
+
+def return_double(x:int):
+   if (x/2 == int(x/2)):
+      return(x*2)
+   else: return(x)
+
+# print(return_double(800))
+
+def return_nextEven(x):
+   if (x % 2 == 0):
+      return(x)
+   else: 
+      return(x+1)
+# print(return_nextEven(13))
+def vacations(gender :str,age :int):
+   if(age < 18):
+      return("Andá de vacaciones")
+   elif(gender == "M"):
+      if (age < 65):
+         return("Te toca trabajar")
+      else: return("Andá de vacaciones")
+   else:
+      if (age < 60):
+         return("Te toca trabajar")
+      else: return("Andá de vacaciones")
+# print(vacations("F",60))
+
+#ejc 6----- while loops
+def diezNumeros():
+   i =  0
+   while i < 10:
+      i = i +1
+      print(i)
+
+# diezNumeros()
+
+def odd_numbers10to40():
+   i = 10
+   while i <= 40:
+      
+      print(i)
+      i = i + 2
+# odd_numbers10to40()
+
+def rocket_launch():
+   i = 10
+   while (i > 0):
+      print (i)
+      i -= 1
+   
+   print("Standby for titanfall")
+# rocket_launch()
+
+def for_rocket_launch():
+   for i in range(1,11):
+      print(i)
+   print("RAJA EL COHETE")
+
+for_rocket_launch()
