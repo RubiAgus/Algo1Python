@@ -140,7 +140,7 @@ def return_nextEven(x):
 # print(return_nextEven(13))
 def vacations(gender :str,age :int):
    if(age < 18):
-      return("Andá de vacaciones")
+      return("Anda de vacaciones")
    elif(gender == "M"):
       if (age < 65):
          return("Te toca trabajar")
